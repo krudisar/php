@@ -1,7 +1,10 @@
 <?php
 // Connecting, selecting database
+$dbuser_name = "dbuser";
 $dbuser_password = "VMware1!";
-$dbconn = pg_connect("host=x.x.x.x dbname=movies user=dbuser password=$dbuser_password")
+$db_name = "movies";
+
+$dbconn = pg_connect("host=x.x.x.x dbname=$db_name user=$dbuser_name password=$dbuser_password")
     or die('Could not connect: ' . pg_last_error());
 
 // Performing SQL query
