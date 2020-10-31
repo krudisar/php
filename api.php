@@ -1,10 +1,11 @@
-
 <?php
-// Connecting, selecting database
-$dbuser_user = "dbuser";
-$dbuser_password = "VMware1!";
 
-$dbconn = pg_connect("host=x.x.x.x dbname=movies user=$dbuser_user password=$dbuser_password")
+// Connecting, selecting database
+$dbuser_name = "dbuser";
+$dbuser_password = "VMware1!";
+$db_name = "movies";
+
+$dbconn = pg_connect("host=x.x.x.x dbname=$db_name user=$dbuser_name password=$dbuser_password")
     or die('Could not connect: ' . pg_last_error());
 
 // Performing SQL query
@@ -23,16 +24,13 @@ if($result) {
     $response[$i]['category'] = $line["category"];
     $i++;
   }
+  // output prepared JSON structure as a response to this API call
   echo json_encode($response, JSON_PRETTY_PRINT);
 }
 
-// Free resultset
+// Final clean up
 pg_free_result($result);
-
-// Closing connection
 pg_close($dbconn);
 
-//echo "<hr>";
-//echo "Served by ... :", getHostByName(getHostName());
-
 ?>
+
