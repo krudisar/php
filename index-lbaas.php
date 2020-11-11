@@ -6,7 +6,7 @@
 </header>
 <body>
 
-<table border=4red bordercolor="blue" height="100%" width="100%"><tr><td valign="center" align="$
+<table border=4red bordercolor="blue" height="100%" width="100%"><tr><td valign="center" align="center">
     <font size=8>
     A RESPONSE FROM BACKEND SERVER: <p>
     <font color="red">
